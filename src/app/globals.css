@@ -23,9 +23,9 @@
      Neutral System
      ========================================================= */
 
-  --background: #fffdf9;
+  --background: #f3eee5;
   --surface: #ffffff;
-  --surface-muted: #f6f5f1;
+  --surface-muted: #ebe5da;
 
   --foreground: var(--chitkaar-black);
   --foreground-muted: #62646b;
