@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Container } from "@/components/ui/container";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 import { MobileNav } from "./mobile-nav";
 
@@ -17,7 +18,7 @@ const navigation = [
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 border-b border-black/5 bg-[#fffdf9]/95 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-md">
       <Container className="flex min-h-20 items-center justify-between gap-6">
         <Link
           href="/"
@@ -42,7 +43,7 @@ export function SiteHeader() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm font-medium text-chitkaar-charcoal transition-colors duration-200 hover:text-chitkaar-magenta"
+              className="text-sm font-medium text-foreground transition-colors duration-200 hover:text-chitkaar-magenta"
             >
               {item.label}
             </Link>
@@ -50,9 +51,11 @@ export function SiteHeader() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
+          <ThemeToggle />
+
           <Link
             href="#get-involved"
-            className="inline-flex min-h-11 items-center justify-center rounded-full border border-chitkaar-black/15 px-5 py-3 text-sm font-semibold text-chitkaar-black transition-colors duration-200 hover:bg-black/5"
+            className="inline-flex min-h-11 items-center justify-center rounded-full border border-border-strong px-5 py-3 text-sm font-semibold text-foreground transition-colors duration-200 hover:bg-surface-muted"
           >
             Join Us
           </Link>

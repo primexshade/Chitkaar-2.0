@@ -27,7 +27,7 @@ export function MobileNav({ navigation }: MobileNavProps) {
         aria-expanded={open}
         aria-controls="mobile-navigation"
         aria-label={open ? "Close navigation menu" : "Open navigation menu"}
-        className="flex h-11 w-11 items-center justify-center rounded-full border border-chitkaar-black/10 text-chitkaar-black transition-colors hover:bg-black/5"
+        className="flex h-11 w-11 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:bg-surface-muted"
       >
         <span className="sr-only">
           {open ? "Close navigation menu" : "Open navigation menu"}
@@ -39,11 +39,13 @@ export function MobileNav({ navigation }: MobileNavProps) {
               open ? "translate-y-2 rotate-45" : ""
             }`}
           />
+
           <span
             className={`h-0.5 w-5 bg-current transition-opacity ${
               open ? "opacity-0" : ""
             }`}
           />
+
           <span
             className={`h-0.5 w-5 bg-current transition-transform ${
               open ? "-translate-y-2 -rotate-45" : ""
@@ -55,15 +57,18 @@ export function MobileNav({ navigation }: MobileNavProps) {
       {open && (
         <div
           id="mobile-navigation"
-          className="absolute inset-x-0 top-full border-b border-black/5 bg-[#fffdf9] px-5 py-6 shadow-soft"
+          className="absolute inset-x-0 top-full border-b border-border bg-background px-5 py-6 shadow-soft"
         >
-          <nav aria-label="Mobile navigation" className="flex flex-col">
+          <nav
+            aria-label="Mobile navigation"
+            className="flex flex-col"
+          >
             {navigation.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={closeMenu}
-                className="border-b border-black/5 py-4 text-base font-medium text-chitkaar-charcoal transition-colors hover:text-chitkaar-magenta"
+                className="border-b border-border py-4 text-base font-medium text-foreground transition-colors hover:text-chitkaar-magenta"
               >
                 {item.label}
               </Link>
@@ -73,7 +78,7 @@ export function MobileNav({ navigation }: MobileNavProps) {
               <Link
                 href="#get-involved"
                 onClick={closeMenu}
-                className="flex min-h-11 flex-1 items-center justify-center rounded-full border border-chitkaar-black/15 px-4 py-3 text-sm font-semibold"
+                className="flex min-h-11 flex-1 items-center justify-center rounded-full border border-border-strong px-4 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-surface-muted"
               >
                 Join Us
               </Link>
@@ -81,7 +86,7 @@ export function MobileNav({ navigation }: MobileNavProps) {
               <Link
                 href="#donate"
                 onClick={closeMenu}
-                className="flex min-h-11 flex-1 items-center justify-center rounded-full bg-chitkaar-magenta px-4 py-3 text-sm font-semibold text-white"
+                className="flex min-h-11 flex-1 items-center justify-center rounded-full bg-chitkaar-magenta px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-chitkaar-magenta-dark"
               >
                 Donate
               </Link>

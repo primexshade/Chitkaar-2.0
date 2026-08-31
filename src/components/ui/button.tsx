@@ -10,9 +10,9 @@ const variantClasses: Record<ButtonVariant, string> = {
   primary:
     "bg-chitkaar-magenta text-white hover:bg-chitkaar-magenta-dark",
   secondary:
-    "bg-chitkaar-yellow text-chitkaar-black hover:bg-chitkaar-yellow-soft",
+    "bg-chitkaar-yellow text-foreground hover:bg-chitkaar-yellow-soft",
   outline:
-    "border border-chitkaar-black/15 bg-transparent text-chitkaar-black hover:bg-black/5",
+    "border border-border bg-transparent text-foreground hover:bg-surface-muted",
 };
 
 export function Button({

@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   /* =========================================================
      Chitkaar Brand
@@ -20,14 +22,14 @@
   --chitkaar-charcoal: #202226;
 
   /* =========================================================
-     Neutral System
+     Light Theme
      ========================================================= */
 
   --background: #f3eee5;
   --surface: #ffffff;
   --surface-muted: #ebe5da;
 
-  --foreground: var(--chitkaar-black);
+  --foreground: #101114;
   --foreground-muted: #62646b;
 
   --border: #e7e5df;
@@ -72,9 +74,43 @@
   --ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
+/* =========================================================
+   Dark Theme
+   ========================================================= */
+
+.dark {
+  --background: #101114;
+  --surface: #181a1e;
+  --surface-muted: #22252a;
+
+  --foreground: #f7f5f0;
+  --foreground-muted: #b8bac1;
+
+  --border: #2c2f35;
+  --border-strong: #3a3d44;
+
+  --chitkaar-yellow-soft: #40390f;
+  --chitkaar-teal-soft: #123d3a;
+  --chitkaar-magenta-soft: #42152e;
+
+  --shadow-soft: 0 8px 30px rgb(0 0 0 / 0.22);
+  --shadow-card: 0 12px 40px rgb(0 0 0 / 0.3);
+}
+
+/* =========================================================
+   Tailwind Theme Tokens
+   ========================================================= */
+
 @theme inline {
   --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+
   --color-foreground: var(--foreground);
+  --color-foreground-muted: var(--foreground-muted);
+
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
 
   --color-chitkaar-yellow: var(--chitkaar-yellow);
   --color-chitkaar-yellow-soft: var(--chitkaar-yellow-soft);
@@ -89,6 +125,10 @@
 
   --color-chitkaar-black: var(--chitkaar-black);
   --color-chitkaar-charcoal: var(--chitkaar-charcoal);
+
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -105,36 +145,49 @@ html {
 body {
   min-height: 100vh;
   margin: 0;
+
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+
+  font-family: var(--font-geist-sans), sans-serif;
   text-rendering: optimizeLegibility;
+
+  transition:
+    background-color 200ms ease,
+    color 200ms ease;
 }
 
-/* Better keyboard navigation */
+/* =========================================================
+   Accessibility
+   ========================================================= */
+
 :focus-visible {
   outline: 3px solid var(--chitkaar-teal);
   outline-offset: 3px;
 }
 
-/* Text selection */
 ::selection {
   background: var(--chitkaar-yellow);
   color: var(--chitkaar-black);
 }
 
-/* Remove default image baseline spacing */
+/* =========================================================
+   Defaults
+   ========================================================= */
+
 img {
   display: block;
 }
 
-/* Better button defaults */
 button,
 a {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* Respect reduced-motion preferences */
+/* =========================================================
+   Reduced Motion
+   ========================================================= */
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -150,11 +203,15 @@ a {
   }
 }
 
-/* Responsive container */
+/* =========================================================
+   Responsive Container
+   ========================================================= */
+
 .chitkaar-container {
   width: min(
     calc(100% - (var(--container-padding) * 2)),
     var(--container-max)
   );
+
   margin-inline: auto;
 }

@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+
+import { ThemeProvider } from "@/components/providers/theme-provider";
+
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,12 +16,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: {
-    default: "Chitkaar Welfare Society",
-    template: "%s | Chitkaar",
-  },
+  title: "Chitkaar",
   description:
-    "Chitkaar is a youth-led welfare society working to uplift women, children, rural communities, and underprivileged communities through education, healthcare, livelihood, and community development.",
+    "Creating a more fearless, self-reliant future through community-led action.",
 };
 
 export default function RootLayout({
@@ -29,9 +29,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable}`}
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
-      <body>{children}</body>
+      <body className="min-h-full flex flex-col">
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   );
 }
