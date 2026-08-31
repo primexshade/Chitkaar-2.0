@@ -1,26 +1,160 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* =========================================================
+     Chitkaar Brand
+     ========================================================= */
+
+  --chitkaar-yellow: #f5c400;
+  --chitkaar-yellow-soft: #fff4b8;
+
+  --chitkaar-teal: #12a89d;
+  --chitkaar-teal-dark: #087c75;
+  --chitkaar-teal-soft: #d9f5f2;
+
+  --chitkaar-magenta: #b01868;
+  --chitkaar-magenta-dark: #86104e;
+  --chitkaar-magenta-soft: #f8d9e8;
+
+  --chitkaar-black: #101114;
+  --chitkaar-charcoal: #202226;
+
+  /* =========================================================
+     Neutral System
+     ========================================================= */
+
+  --background: #fffdf9;
+  --surface: #ffffff;
+  --surface-muted: #f6f5f1;
+
+  --foreground: var(--chitkaar-black);
+  --foreground-muted: #62646b;
+
+  --border: #e7e5df;
+  --border-strong: #d5d2c9;
+
+  /* =========================================================
+     Semantic Colors
+     ========================================================= */
+
+  --success: #18864b;
+  --warning: #c77b00;
+  --error: #c73535;
+
+  /* =========================================================
+     Layout
+     ========================================================= */
+
+  --container-max: 1280px;
+  --container-padding: 1.25rem;
+
+  /* =========================================================
+     Radius
+     ========================================================= */
+
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-pill: 9999px;
+
+  /* =========================================================
+     Shadows
+     ========================================================= */
+
+  --shadow-soft: 0 8px 30px rgb(16 17 20 / 0.06);
+  --shadow-card: 0 12px 40px rgb(16 17 20 / 0.08);
+
+  /* =========================================================
+     Motion
+     ========================================================= */
+
+  --ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
+  --color-chitkaar-yellow: var(--chitkaar-yellow);
+  --color-chitkaar-yellow-soft: var(--chitkaar-yellow-soft);
+
+  --color-chitkaar-teal: var(--chitkaar-teal);
+  --color-chitkaar-teal-dark: var(--chitkaar-teal-dark);
+  --color-chitkaar-teal-soft: var(--chitkaar-teal-soft);
+
+  --color-chitkaar-magenta: var(--chitkaar-magenta);
+  --color-chitkaar-magenta-dark: var(--chitkaar-magenta-dark);
+  --color-chitkaar-magenta-soft: var(--chitkaar-magenta-soft);
+
+  --color-chitkaar-black: var(--chitkaar-black);
+  --color-chitkaar-charcoal: var(--chitkaar-charcoal);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* =========================================================
+   Base
+   ========================================================= */
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
+  min-height: 100vh;
+  margin: 0;
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+/* Better keyboard navigation */
+:focus-visible {
+  outline: 3px solid var(--chitkaar-teal);
+  outline-offset: 3px;
+}
+
+/* Text selection */
+::selection {
+  background: var(--chitkaar-yellow);
+  color: var(--chitkaar-black);
+}
+
+/* Remove default image baseline spacing */
+img {
+  display: block;
+}
+
+/* Better button defaults */
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Responsive container */
+.chitkaar-container {
+  width: min(
+    calc(100% - (var(--container-padding) * 2)),
+    var(--container-max)
+  );
+  margin-inline: auto;
 }
