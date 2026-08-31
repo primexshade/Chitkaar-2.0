@@ -2,49 +2,38 @@
 
 ## Status
 
-Draft.
+Accepted
 
-This document will be finalized after the initial repository and application
-architecture audit.
+The initial application architecture is defined by
+[ADR-0001](../decisions/ADR-0001-application-architecture.md).
 
-## Principles
+## Architecture
 
-Chitkaar 2.0 should prioritize:
+Chitkaar 2.0 uses a modular monolith built with Next.js.
 
-- Maintainability
-- Accessibility
-- Performance
-- Reusability
-- Clear separation of concerns
-- CMS-driven content where appropriate
-- Minimal unnecessary client-side JavaScript
-- Progressive enhancement
-- Strong typing
+The initial infrastructure consists of:
 
-## Planned Areas
+- Next.js
+- Supabase PostgreSQL
+- Supabase Auth
+- Supabase Storage
+- Vercel Free
 
-The application is expected to contain:
-
-- Public website
-- Content layer
-- Event functionality
-- Volunteer functionality
-- Donation experience
-- Gallery
-- Stories
-- Team
-- Future marketplace
-
-## Architecture Decision
-
-The final architecture will be documented after evaluating:
-
-- Next.js structure
-- Content requirements
-- Existing Chitkaar functionality
-- CMS requirements
-- Backend requirements
-- Authentication requirements
-- Deployment requirements
-
-No architecture should be introduced solely for the sake of complexity.
+```text
+                    CHITKAAR 2.0
+                         |
+              +----------+----------+
+              |                     |
+              v                     v
+       Public Website          Admin Interface
+              |                     |
+              +----------+----------+
+                         |
+                         v
+                    Next.js App
+                         |
+              +----------+----------+
+              |          |          |
+              v          v          v
+          PostgreSQL    Auth      Storage
+          Supabase    Supabase    Supabase
