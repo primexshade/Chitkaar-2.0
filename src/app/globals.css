@@ -185,6 +185,23 @@ a {
 }
 
 /* =========================================================
+   Reveal Motion
+   ========================================================= */
+
+.chitkaar-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 700ms var(--ease-standard),
+    transform 700ms var(--ease-standard);
+}
+
+.chitkaar-reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================================
    Reduced Motion
    ========================================================= */
 

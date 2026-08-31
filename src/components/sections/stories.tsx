@@ -1,3 +1,4 @@
+import { Reveal } from "@/components/ui/reveal";
 const storyThemes = [
   {
     number: "01",
@@ -50,13 +51,14 @@ export function Stories() {
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-chitkaar-magenta">
               Stories &amp; Gallery
             </p>
-
+            <Reveal>
             <h2
               id="stories-heading"
               className="mt-4 text-4xl font-bold tracking-tight text-foreground sm:text-5xl"
             >
               Show the people behind the change.
             </h2>
+            </Reveal>
           </div>
 
           <p className="max-w-xl text-base leading-7 text-foreground-muted">

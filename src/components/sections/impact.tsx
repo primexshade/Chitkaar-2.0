@@ -1,3 +1,5 @@
+import { Reveal } from "@/components/ui/reveal";
+
 const impactAreas = [
   {
     number: "01",
@@ -57,13 +59,14 @@ export function Impact() {
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-chitkaar-magenta">
               Our Impact
             </p>
-
+            <Reveal>
             <h2
               id="impact-heading"
               className="mt-4 text-4xl font-bold tracking-tight text-foreground sm:text-5xl"
             >
               Creating change where it matters.
             </h2>
+            </Reveal>
           </div>
 
           <p className="max-w-2xl text-lg leading-8 text-foreground-muted">

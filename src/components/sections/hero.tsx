@@ -1,3 +1,5 @@
+import { Reveal } from "@/components/ui/reveal";
+
 export function Hero() {
   return (
     <section
@@ -10,13 +12,14 @@ export function Hero() {
           <p className="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-chitkaar-teal">
             Chitkaar 2.0
           </p>
-
+        <Reveal>
           <h1
             id="hero-heading"
             className="max-w-4xl text-5xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl"
           >
             Creating a more fearless, self-reliant future.
           </h1>
+        </Reveal>
 
           <p className="mt-7 max-w-2xl text-lg leading-8 text-foreground-muted sm:text-xl">
             We work with communities to uplift women, build confidence, and
