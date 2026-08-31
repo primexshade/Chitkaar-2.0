@@ -97,7 +97,7 @@ export function Programs() {
                   href="#get-involved"
                   className="mt-8 inline-flex items-center text-sm font-semibold text-chitkaar-magenta transition-colors duration-200 hover:text-chitkaar-magenta-dark"
                 >
-                  Learn more
+                  Get involved
                   <span
                     aria-hidden="true"
                     className="ml-2 transition-transform duration-200 group-hover:translate-x-1"

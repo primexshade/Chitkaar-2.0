@@ -60,12 +60,12 @@ export function Impact() {
               Our Impact
             </p>
             <Reveal>
-            <h2
-              id="impact-heading"
-              className="mt-4 text-4xl font-bold tracking-tight text-foreground sm:text-5xl"
-            >
-              Creating change where it matters.
-            </h2>
+              <h2
+                id="impact-heading"
+                className="mt-4 text-4xl font-bold tracking-tight text-foreground sm:text-5xl"
+              >
+                Creating change where it matters.
+              </h2>
             </Reveal>
           </div>
 
@@ -110,9 +110,9 @@ export function Impact() {
 
         <div className="mt-10 rounded-[1.5rem] border border-border bg-background p-7 sm:p-8">
           <p className="max-w-3xl text-base leading-7 text-foreground-muted">
-            Our impact is built through people, participation, and consistent
-            community action. As Chitkaar grows, this space can evolve to
-            showcase verified stories, projects, and measurable outcomes.
+            Real impact is measured through the people who grow, the
+            opportunities that open up, and the communities that become more
+            confident in shaping their own future.
           </p>
         </div>
       </div>
